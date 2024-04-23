@@ -11,4 +11,4 @@
 - World Population by Country: [https://www.kaggle.com/datasets/joebeachcapital/world-population-by-country-2023](https://www.kaggle.com/datasets/joebeachcapital/world-population-by-country-2023)
 
 ## General Notes
-- Uses LLama Index
+- Uses LLama Index: [https://docs.llamaindex.ai/en/stable/](https://docs.llamaindex.ai/en/stable/)
