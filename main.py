@@ -10,5 +10,8 @@ population_path = os.path.join(os.path.dirname(__file__), 'data', 'population.cs
 population_df = pd.read_csv(population_path)
 
 # create a query engine so that we can query the data
-population_query_engine = PandasQueryEngine(df=population_df)
+# verbose=True will print out details from the query engine
+population_query_engine = PandasQueryEngine(df=population_df, verbose=True)
+
+
 
