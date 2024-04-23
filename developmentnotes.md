@@ -11,4 +11,6 @@
 - World Population by Country: [https://www.kaggle.com/datasets/joebeachcapital/world-population-by-country-2023](https://www.kaggle.com/datasets/joebeachcapital/world-population-by-country-2023)
 
 ## General Notes
-- Uses LLama Index: [https://docs.llamaindex.ai/en/stable/](https://docs.llamaindex.ai/en/stable/)
+- Uses Llama Index: [https://docs.llamaindex.ai/en/stable/](https://docs.llamaindex.ai/en/stable/)
+  - Llama Index is ideal for search and retrieval whereas LangChain is a broader framework to bring multiple tools together
+  - Llama Index and LangChain can also be used together 

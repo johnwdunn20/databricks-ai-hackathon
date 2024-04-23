@@ -13,5 +13,5 @@ population_df = pd.read_csv(population_path)
 # verbose=True will print out details from the query engine
 population_query_engine = PandasQueryEngine(df=population_df, verbose=True)
 
-
+# pass a template query to the query engine
 
