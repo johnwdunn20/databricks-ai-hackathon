@@ -7,6 +7,7 @@ instruction_str= """
     4. PRINT ONLY THE EXPRESSION
     5. Do not quote the expression."""
     
+# Prompt template allows us to embed whatever we specify here into the model prompt    
 new_prompt = PromptTemplate(
     """\
     You are working with a pandas dataframe in Python.
@@ -20,3 +21,4 @@ new_prompt = PromptTemplate(
     
     Expression: """
 )
+# query_str is a placeholder that will be replaced with the actual query
