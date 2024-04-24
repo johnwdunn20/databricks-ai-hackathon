@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import pandas as pd
 from llama_index.query_engine import PandasQueryEngine
+from prompts import new_prompt, instruction_str
 
 load_dotenv()
 
