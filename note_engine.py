@@ -16,7 +16,7 @@ def save_note(note: str):
         
     return "Note saved"
 
-note_engine = FunctionTool.from_defaults(
+note_engine = FunctionTool(
     fn=save_note,
     name="note_saver",
     description="Save a text based note to a file for the user",

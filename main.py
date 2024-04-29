@@ -20,6 +20,19 @@ population_query_engine = PandasQueryEngine(df=population_df, verbose=True, inst
 population_query_engine.update_prompts({"pandas_prompt": new_prompt})
 
 # Test the query engine
-population_query_engine.query("What is the population of Canada?")
+# population_query_engine.query("What is the population of Canada?")
 
 # Specify the tools we'll have access to
+tools = [
+    note_engine,
+    QueryEngineTool(
+        query_engine=population_query_engine,
+        metadata=ToolMetadata(
+            name="population_query_engine",
+            description="Query the population data",
+        )
+        name="population_query_engine",
+        description="Query the population data",
+    )
+    
+]
