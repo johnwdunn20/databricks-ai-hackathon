@@ -12,7 +12,9 @@ population_df = pd.read_csv(population_path)
 
 # create a query engine so that we can query the data
 # verbose=True will print out details from the query engine
-population_query_engine = PandasQueryEngine(df=population_df, verbose=True)
+population_query_engine = PandasQueryEngine(df=population_df, verbose=True, instruction_str=instruction_str)
+population_query_engine.update_prompt({"pandas_prompt" :new_prompt})
 
-# pass a template query to the query engine
+# Test the query engine
+population_query_engine.query("What is the population of Canada?")
 
