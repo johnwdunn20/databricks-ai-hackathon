@@ -2,7 +2,11 @@ from dotenv import load_dotenv
 import os
 import pandas as pd
 from llama_index.experimental import PandasQueryEngine
+from llama_index.core.tools import QueryEngineTool, ToolMetadata
+from llama_index.core.agent import ReActAgent
+from llama_index.llms.openai import OpenAI
 from prompts import new_prompt, instruction_str
+from note_engine import note_engine
 
 load_dotenv()
 
@@ -18,3 +22,4 @@ population_query_engine.update_prompts({"pandas_prompt": new_prompt})
 # Test the query engine
 population_query_engine.query("What is the population of Canada?")
 
+# Specify the tools we'll have access to
