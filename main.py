@@ -5,7 +5,7 @@ from llama_index.experimental import PandasQueryEngine
 from llama_index.core.tools import QueryEngineTool, ToolMetadata
 from llama_index.core.agent import ReActAgent
 from llama_index.llms.openai import OpenAI
-from prompts import new_prompt, instruction_str
+from prompts import new_prompt, instruction_str, context
 from note_engine import note_engine
 
 load_dotenv()
@@ -19,8 +19,6 @@ population_df = pd.read_csv(population_path)
 population_query_engine = PandasQueryEngine(df=population_df, verbose=True, instruction_str=instruction_str)
 population_query_engine.update_prompts({"pandas_prompt": new_prompt})
 
-# Test the query engine
-# population_query_engine.query("What is the population of Canada?")
 
 # Specify the tools we'll have access to
 tools = [
@@ -31,8 +29,11 @@ tools = [
             name="population_query_engine",
             description="Query the population data",
         )
-        name="population_query_engine",
-        description="Query the population data",
     )
-    
 ]
+
+# Test the query engine
+llm = OpenAI(model='gpt-3.5-turbo-1106')
+# create an agent that has access to the tools - ReActAgent will determine the best tool to use based on the query
+agent = ReActAgent.from_tools(llm=llm, tools=tools, verbose=True, context=context)
+# start the agent

@@ -22,3 +22,6 @@ new_prompt = PromptTemplate(
     Expression: """
 )
 # query_str is a placeholder that will be replaced with the actual query
+
+# Giving the agent some context
+context = """The primary role of this agent is to assist users by providing them with information and country populations and details about the United States."""
