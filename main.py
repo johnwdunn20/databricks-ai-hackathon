@@ -36,4 +36,7 @@ tools = [
 llm = OpenAI(model='gpt-3.5-turbo-1106')
 # create an agent that has access to the tools - ReActAgent will determine the best tool to use based on the query
 agent = ReActAgent.from_tools(llm=llm, tools=tools, verbose=True, context=context)
-# start the agent
+# start the agent (:= is the walrus operator and is used to assign a value to a variable as part of an expression. The while loop will run until the user enters the string 'q' as the prompt)
+while (prompt := input("Enter a prompt (q to quit): ")) != 'q':
+    result = agent.query(prompt)
+    print(result)
