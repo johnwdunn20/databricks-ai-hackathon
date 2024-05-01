@@ -23,3 +23,5 @@ def get_index(data, index_name):
 
 pdf_path = os.path.join(os.path.dirname(__file__), 'data', 'United_States.pdf')
 US_pdf = PDFReader().load_data(file=pdf_path)
+US_index = get_index(US_pdf, "US_index")
+US_engine = US_index.as_query_engine()
