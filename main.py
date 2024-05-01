@@ -31,13 +31,13 @@ tools = [
             description="Query the population data",
         )
     ),
-    # QueryEngineTool(
-    #     query_engine=US_engine,
-    #     metadata=ToolMetadata(
-    #         name="US_query_engine",
-    #         description="Query the United States pdf",
-    #     )
-    # ),
+    QueryEngineTool(
+        query_engine=US_engine,
+        metadata=ToolMetadata(
+            name="US_query_engine",
+            description="Query the United States pdf",
+        )
+    ),
 ]
 
 # Test the query engine
