@@ -7,6 +7,7 @@ from llama_index.core.agent import ReActAgent
 from llama_index.llms.openai import OpenAI
 from prompts import new_prompt, instruction_str, context
 from note_engine import note_engine
+from pdf import US_engine
 
 load_dotenv()
 
@@ -29,7 +30,14 @@ tools = [
             name="population_query_engine",
             description="Query the population data",
         )
-    )
+    ),
+    QueryEngineTool(
+        query_engine=US_engine,
+        metadata=ToolMetadata(
+            name="US_query_engine",
+            description="Query the United States pdf",
+        )
+    ),
 ]
 
 # Test the query engine
