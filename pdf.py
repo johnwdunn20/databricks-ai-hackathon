@@ -4,7 +4,9 @@
 
 import os
 from llama_index.core import VectorStoreIndex, StorageContext, load_index_from_storage
-from llama_index.readers import PDFReader
+from llama_index.readers.file import PDFReader
+from dotenv import load_dotenv
+load_dotenv()
 
 def get_index(data, index_name):
     index = None
@@ -18,6 +20,8 @@ def get_index(data, index_name):
     # if it does exist, load it
     else:
         index = load_index_from_storage(StorageContext.from_defaults(persist_dir=index_name))
+        
+    return index
 
 # we can just create the index once and store it in the storage
 
