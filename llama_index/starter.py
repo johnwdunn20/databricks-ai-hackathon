@@ -1,9 +1,12 @@
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+import os
 
 # Might need to load dotenv if I don't export it in my shell
 
+print(os.path.join(os.path.dirname(__file__), 'data'))
+
 # load data from the data directory
-documents = SimpleDirectoryReader('data').load_data()
+documents = SimpleDirectoryReader(os.path.join(os.path.dirname(__file__), 'data')).load_data()
 # create an index on that data
 index = VectorStoreIndex.from_documents(documents)
 # query engine
